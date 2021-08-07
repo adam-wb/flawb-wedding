@@ -22,7 +22,13 @@ p, a {
 }
 
 .navbar-nav {
+  color: silver;
   align-items: center;
+}
+
+.nav-item a {
+  color: silver;
+  text-decoration: none;
 }
 
 .navbar-toggler {

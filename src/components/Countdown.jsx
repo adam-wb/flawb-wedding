@@ -19,18 +19,18 @@ const Countdown = () => {
                 setSeconds(seconds - 1);
                 return;
             }
-            if (minutes > 1) {
+            if (minutes > 0) {
                 setMinutes(minutes - 1);
                 setSeconds(60);
                 return;
             }
-            if (hours > 1) {
+            if (hours > 0) {
                 setHours(hours - 1);
                 setMinutes(60);
                 setSeconds(60);
                 return;
             }
-            if (days > 1) {
+            if (days > 0) {
                 setDays(days - 1);
                 setHours(24);
                 setMinutes(60);

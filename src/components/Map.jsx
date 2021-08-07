@@ -8,7 +8,7 @@ import { GOOGLE_MAPS_API_KEY } from '../helpers/keys';
 
 const DEFAULT_MAP_ZOOM = 12;
 
-const Pin = ({ label, lat, lng, address }) => {
+const Pin = ({ label, address }) => {
     const openInMaps = () => {
         window.open(`http://maps.google.com/?q=${address}`);
     }
@@ -58,7 +58,6 @@ const Map = ({ pins }) => {
                     bootstrapURLKeys={{ key: GOOGLE_MAPS_API_KEY }}
                     defaultCenter={MAP_CENTER}
                     defaultZoom={DEFAULT_MAP_ZOOM}
-                    yesIWantToUseGoogleMapApiInternals
                     onGoogleApiLoaded={({ map, maps }) => apiIsLoaded(map, maps, pins)}
                 >
                     {pins.map(((pin, idx) => (<Pin key={idx} {...pin}/>)))}
