@@ -11,23 +11,21 @@ import Paths from './helpers/paths';
 
 import './App.css';
 
-const isUnderConstruction = true;
-
 const App = () => {
   return (
     <div className="App">
       <NavBar />
-      { isUnderConstruction && <h1>Under construction</h1> }
-      { !isUnderConstruction && <div className="Main">
-        <Switch>
-            <Route exact path={Paths.HOME} component={Home} />
-            <Route path={Paths.VENUE} component={Venue} />
-            <Route path={Paths.ACCOMODATION} component={Accomodation} />
-            <Route path={Paths.RSVP} component={Rsvp} />
-            <Route component={PageNotFound} />
-        </Switch>
+      <div className="Wrapper">
+      <div className="Main">
+          <Switch>
+              <Route exact path={Paths.HOME} component={Home} />
+              <Route path={Paths.VENUE} component={Venue} />
+              <Route path={Paths.ACCOMODATION} component={Accomodation} />
+              <Route path={Paths.RSVP} component={Rsvp} />
+              <Route component={PageNotFound} />
+          </Switch>
+        </div>
       </div>
-      }
     </div>
   ) 
 }

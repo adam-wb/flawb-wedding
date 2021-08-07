@@ -13,12 +13,20 @@ p, a {
 }
 
 .Navbar {
-  background-color: #6495ED;
   color: silver;
+  padding-top: 48px;
+}
+
+.navbar {
+  background-color: #6495ED;
 }
 
 .navbar-nav {
   align-items: center;
+}
+
+.navbar-toggler {
+  color: silver;
 }
 
 a {
@@ -35,14 +43,33 @@ a:hover {
   padding: 12px;
 }
 
-.Main {
+.Wrapper {
   padding: 16px;
+}
+
+.Countdown h1 {
+  text-align: center;
 }
 
 .Map {
   flex-grow: '1';
   display: block;
-  min-height: 25vh;
+  min-height: 50vh;
   max-height: 100px; 
   min-width: 50px;
+}
+
+.Pin {
+  background-color: #6495ED;
+  display: block;
+  color: #6495ED;
+}
+
+.Pin p {
+  color: black;
+  font-size: medium;
+}
+
+.Pin p:hover {
+  font-size: large;
 }

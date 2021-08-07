@@ -1,30 +1,37 @@
 import React from 'react';
 
 import Map from './Map'
+import * as locations from '../helpers/locations';
 
-const Venue = () => (
-    <div className="Venue">
-        <div className="container">
-            <div className="row">
-                <h1>Venues</h1>
-                <Map />
-            </div>
-            <div className="col">
-
-            </div>
-            <div className="col">
+const Venue = () => {
+    const ceremony = locations.ST_ANDREWS;
+    const reception = locations.SWINTON;
+    
+    return (
+        <div className="Venue">
+            <div className="container-fluid">
+                <div className="col">
+                    <div className="row">
+                        <h1>Ceremony - St Andrew's Church</h1>
+                        <div className="col">
+                            <p>The ceremony will take place at the church in Fabiana's home village.</p>
+                        </div>
+                    </div>
+                    <div className="row">
+                        <h1>Reception - Swinton Park Hotel</h1>
+                        <div className="col">
+                            <p>The reception takes place at Swinton Park, just outside Masham.</p>
+                        </div>
+                    </div>
+                    <div className="row">
+                        <h1>Tap a pin for directions</h1>
+                        <Map pins={[ceremony, reception]}/>
+                    </div>
+                </div>
                 
             </div>
-            <div className="row">
-                <h2>Ceremony - St Andrew's Church</h2>
-                <p>The ceremony will take place at the church in Fabiana's home village.</p>
-            </div>
-            <div className="row">
-                <h2>Reception - Swinton Park Hotel</h2>
-                <p>The reception takes place at Swinton Park, just outside Masham.</p>
-            </div>
         </div>
-    </div>
-)
+    )
+}
 
 export default Venue;

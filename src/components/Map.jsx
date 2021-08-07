@@ -1,31 +1,42 @@
 import React from 'react';
-import GoogleMap from 'google-map-react';
+import GoogleMapReact from 'google-map-react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMapPin } from '@fortawesome/free-solid-svg-icons';
 
+import { MAP_CENTER } from '../helpers/locations';
 import { GOOGLE_MAPS_API_KEY } from '../helpers/keys';
-import * as LOCATIONS from '../helpers/locations';
 
-const DEFAULT_MAP_ZOOM = 11;
+const DEFAULT_MAP_ZOOM = 12;
 
-const Pin = ({ text }) => <div className="Pin"><FontAwesomeIcon icon={faMapPin} />{text}</div>;
+const Pin = ({ label, lat, lng, address }) => {
+    const openInMaps = () => {
+        window.open(`http://maps.google.com/?q=${address}`);
+    }
 
-const Map = () => {
-    const pins = [LOCATIONS.ST_ANDREWS, LOCATIONS.SWINTON];
+    return (
+        <div className="Pin"><FontAwesomeIcon icon={faMapPin} size="2x"/><p onClick={openInMaps}>{label}</p></div>
+    )
+}
+
+const Map = ({ pins }) => {
 
     const getMapBounds = (map, maps, pins) => {
         const bounds = new maps.LatLngBounds();
       
+        if (!pins) {
+            return bounds;
+        }
+
         pins.forEach((place) => {
           bounds.extend(new maps.LatLng(
             place.lat,
             place.lng,
           ));
         });
+
         return bounds;
       };
 
-    // Re-center map when resizing the window
     const bindResizeListener = (map, maps, bounds) => {
         maps.event.addDomListenerOnce(map, 'idle', () => {
         maps.event.addDomListener(window, 'resize', () => {
@@ -34,27 +45,24 @@ const Map = () => {
         });
     };
 
-    // Fit map to its bounds after the api is loaded
     const apiIsLoaded = (map, maps, pins) => {
-        // Get bounds by our places
         const bounds = getMapBounds(map, maps, pins);
-        // Fit map to bounds
         map.fitBounds(bounds);
-        // Bind the resize listener
         bindResizeListener(map, maps, bounds);
     };
 
     return (
         <div className="Map">
-            <div style={{ height: '20vh', width: '50%' }}>            
-                <GoogleMap
+            <div style={{ height: '50vh', width: '100%' }}>            
+                <GoogleMapReact
                     bootstrapURLKeys={{ key: GOOGLE_MAPS_API_KEY }}
-                    defaultCenter={LOCATIONS.MAP_CENTER}
+                    defaultCenter={MAP_CENTER}
                     defaultZoom={DEFAULT_MAP_ZOOM}
                     yesIWantToUseGoogleMapApiInternals
                     onGoogleApiLoaded={({ map, maps }) => apiIsLoaded(map, maps, pins)}
-                />
-                {pins.map(((pin, idx) => (<Pin key={idx} text={pin.address} {...pin}/>)))}
+                >
+                    {pins.map(((pin, idx) => (<Pin key={idx} {...pin}/>)))}
+                </GoogleMapReact>
             </div>
         </div>
     )
