@@ -9,26 +9,27 @@ const Venue = () => {
     
     return (
         <div className="Venue">
-            <div className="container-fluid">
-                <div className="col">
-                    <div className="row">
-                        <h1>Ceremony - St Andrew's Church</h1>
-                        <div className="col">
-                            <p>The ceremony will take place at the church in Fabiana's home village.</p>
+            <div className="container">
+                <div className="row">
+                    <div className="col">
+                        <div className="row">
+                            <h1>Ceremony - St Andrew's Church</h1>
+                            <div className="col">
+                                <p>The ceremony will take place at the church in Fabiana's home village.</p>
+                            </div>
                         </div>
-                    </div>
-                    <div className="row">
-                        <h1>Reception - Swinton Park Hotel</h1>
-                        <div className="col">
-                            <p>The reception takes place at Swinton Park, just outside Masham.</p>
+                        <div className="row">
+                            <h1>Reception - Swinton Park Hotel</h1>
+                            <div className="col">
+                                <p>The reception takes place at Swinton Park, just outside the market town of Masham.</p>
+                            </div>
                         </div>
-                    </div>
-                    <div className="row">
-                        <h1>Tap a pin for directions</h1>
-                        <Map pins={[ceremony, reception]}/>
+                        <div className="row">
+                            <h1>Tap a pin for directions</h1>
+                            <Map pins={[ceremony, reception]}/>
+                        </div>
                     </div>
                 </div>
-                
             </div>
         </div>
     )

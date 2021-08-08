@@ -58,6 +58,7 @@ const Map = ({ pins }) => {
                     bootstrapURLKeys={{ key: GOOGLE_MAPS_API_KEY }}
                     defaultCenter={MAP_CENTER}
                     defaultZoom={DEFAULT_MAP_ZOOM}
+                    yesIWantToUseGoogleMapApiInternals={true}
                     onGoogleApiLoaded={({ map, maps }) => apiIsLoaded(map, maps, pins)}
                 >
                     {pins.map(((pin, idx) => (<Pin key={idx} {...pin}/>)))}
