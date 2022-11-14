@@ -8,9 +8,9 @@ import { GOOGLE_MAPS_API_KEY } from '../helpers/keys';
 
 const DEFAULT_MAP_ZOOM = 12;
 
-const Pin = ({ label, address }) => {
+const Pin = ({ label, address, mapsPlaceId }) => {
     const openInMaps = () => {
-        window.open(`http://maps.google.com/?q=${address}`);
+        window.open(`https://www.google.com/maps/search/?api=1&query=${address}&query_place_id=${mapsPlaceId}`);
     }
 
     return (

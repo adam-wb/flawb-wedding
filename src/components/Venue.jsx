@@ -16,12 +16,14 @@ const Venue = () => {
                             <h1>Ceremony - St Andrew's Church</h1>
                             <div className="col">
                                 <p>The ceremony will take place at the church in Fabiana's home village.</p>
+                                <p>{ceremony.address}</p>
                             </div>
                         </div>
                         <div className="row">
                             <h1>Reception - Swinton Park Hotel</h1>
                             <div className="col">
                                 <p>The reception takes place at Swinton Park, just outside the market town of Masham.</p>
+                                <p>{reception.address}</p>
                             </div>
                         </div>
                         <div className="row">
