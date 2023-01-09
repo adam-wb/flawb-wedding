@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 
+// TODO Unused - remove
 /* eslint-disable no-unused-vars */
 const UNDER_CONSTRUCTION = true;
 

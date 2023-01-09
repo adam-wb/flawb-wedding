@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHome, faChurch, faEnvelope, faHotel } from '@fortawesome/free-solid-svg-icons';
+import { faHome, faChurch, faHotel } from '@fortawesome/free-solid-svg-icons';
 
 import Paths from '../helpers/paths';
 
@@ -27,10 +27,6 @@ const NavBar = () => (
                 <li className="nav-item">
                   <FontAwesomeIcon icon={faHotel} size="lg" />
                   <Link to={Paths.ACCOMODATION}>Accomodation</Link>
-                </li>
-                <li className="nav-item">
-                  <FontAwesomeIcon icon={faEnvelope} size="lg" />
-                  <Link to={Paths.RSVP}>RSVP</Link>
                 </li>
               </ul>
             </div>
