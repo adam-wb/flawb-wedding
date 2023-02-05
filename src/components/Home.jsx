@@ -1,32 +1,56 @@
-import React from 'react';
-import Countdown from './Countdown';
-import { CARRIAGES, CEREMONY, EVENING_RECEPTION, MORNING_BREAKFAST, MORNING_BREAKFAST_END, toSimpleTimeString } from '../helpers/schedule'
-
-// TODO format dates to not include seconds
+import React from "react";
+import Countdown from "./Countdown";
+import { CEREMONY } from "../helpers/schedule";
+import BannerPhoto from "./BannerPhoto";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faHeart } from "@fortawesome/free-solid-svg-icons";
 
 const Home = () => (
-    <div className="Home">
-        <div className="container">
-            <div className="row">
-                <div className="col">
-                    <h1>Countdown to the ceremony</h1>
-                    <Countdown date={CEREMONY}/>
-                    <p>We would be honoured if you could join us both to share our special day with us. 
-                        We hope this site will help answer any questions about you have about the day in advance.</p>
-                    <h2>The day: {CEREMONY.toDateString()}</h2>
-                    <p>Ceremony: {toSimpleTimeString(CEREMONY)}</p>
-                    <p>Evening Reception: {toSimpleTimeString(EVENING_RECEPTION)} - {toSimpleTimeString(CARRIAGES)}</p>
-                    <h2>The morning after: {MORNING_BREAKFAST.toDateString()}</h2>
-                    <p>For those staying at Swinton, please join us for:</p>
-                    <p>Breakfast: {toSimpleTimeString(MORNING_BREAKFAST)} - {toSimpleTimeString(MORNING_BREAKFAST_END)}</p>
-                    <h2>Gifts</h2>
-                    <p>We have been fortunate enough to live together for some time now, 
-                        and as a result would love any contribution towards a housing deposit, 
-                        to help us kickstart our married life in a house we can truly call our own.</p>
-                </div>
-            </div>
+  <div id="Home">
+    <div className="container py-3">
+      <div className="row">
+        <div className="col">
+          <h1>{"Join us in the countdown until we say 'I do!'"}</h1>
+          <Countdown date={CEREMONY} />
         </div>
+      </div>
     </div>
-)
+    <BannerPhoto />
+    <div className="container py-3">
+      <div className="row">
+        <div className="col">
+          <h2>
+            {"Welcome to our wedding website! We're so glad you're here."}
+          </h2>
+          <p>
+            {
+              "We've created this website as a helpful resource for all of the need-to-know details in the lead up to our big day."
+            }
+          </p>
+          <p>
+            {
+              "Here you'll find our schedule of timings and venue directions, local accommodation options for those travelling, along with our love story."
+            }
+          </p>
+          <p>
+            {
+              "We'd love for you to take a look around to learn more about our wedding day plans. Don't forget to RSVP and leave us a song request for the dance floor, too!"
+            }
+          </p>
+          <p>
+            {
+              "And finally, thanks so much for all of your love and support so far! We can't wait to celebrate this special day with all of our favourite people."
+            }
+          </p>
+          <p>{"Lots of love, Adam and Fabiana"}</p>
+          <p>{"XOXO"}</p>
+          <p>
+            <FontAwesomeIcon icon={faHeart} size="lg" />
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+);
 
 export default Home;
