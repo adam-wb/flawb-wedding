@@ -1,6 +1,6 @@
 # Flawb Wedding
 
-Website to communicate info to guests of our wedding.
+This is the source code for `https://flawb.co.uk`, the website I built to share info with the guests of our wedding.
 
 # This repo
 
