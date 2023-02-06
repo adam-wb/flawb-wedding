@@ -11,21 +11,29 @@ import {
 } from "../helpers/schedule";
 
 const Schedule = () => (
-  <div id="schedule">
+  <div id="Schedule">
     <div className="container py-3">
-      <div className="row">
+      <div className="row p-3">
         <div className="col">
           <h1>{"Order of the Day"}</h1>
         </div>
       </div>
-      <div className="row">
+      <div className="row p-3">
         <div className="col">
           <h2>{CEREMONY.toDateString()}</h2>
+        </div>
+      </div>
+      <div className="row px-3">
+        <div className="col">
           <h3>{"St Andrew's Church"}</h3>
           <p>
             {"Ceremony: "}
             {toSimpleTimeString(CEREMONY)}
           </p>
+        </div>
+      </div>
+      <div className="row px-3">
+        <div className="col">
           <h3>{"Swinton Park Hotel"}</h3>
           <p>
             {"Drinks Reception: "}
@@ -43,7 +51,16 @@ const Schedule = () => (
             {"Carriages: "}
             {toSimpleTimeString(CARRIAGES)}
           </p>
+        </div>
+      </div>
+      <div className="row p-3">
+        <div className="col">
           <h2>{MORNING_BREAKFAST.toDateString()}</h2>
+        </div>
+      </div>
+      <div className="row px-3">
+        <div className="col">
+          <h3>{"Swinton Park Hotel"}</h3>
           <p>{"For those staying at Swinton, please join us for:"}</p>
           <p>
             {"Breakfast: "}

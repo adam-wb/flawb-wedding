@@ -14,22 +14,26 @@ const Venue = () => {
   return (
     <div id="Venue">
       <div className="container py-3">
-        <div className="row p-2">
+        <div className="row">
           <div className="col">
             <h1>{"Venue"}</h1>
           </div>
         </div>
         <div className="row">
           <div className="col">
-            <div className="row py-2">
-              <h2>{"Ceremony - St Andrew's Church"}</h2>
+            <div className="row p-3">
               <div className="col">
+                <h2>{"Ceremony - St Andrew's Church"}</h2>
+              </div>
+            </div>
+            <div className="row d-flex">
+              <div className="col-md">
                 <VenuePhoto
                   alt="Photo of St.Andrew's Church"
                   path={churchPath}
                 ></VenuePhoto>
               </div>
-              <div className="col">
+              <div className="col-md p-3">
                 <p>
                   {
                     "The ceremony will take place at the church in Fabiana's home village."
@@ -43,9 +47,23 @@ const Venue = () => {
                 <p>{ceremony.address}</p>
               </div>
             </div>
-            <div className="row py-2">
-              <h2>Reception - Swinton Park Hotel</h2>
+          </div>
+        </div>
+        <div className="row">
+          <div className="col">
+            <div className="row p-3">
               <div className="col">
+                <h2>Reception - Swinton Park Hotel</h2>
+              </div>
+            </div>
+            <div className="row d-flex">
+              <div className="col-md">
+                <VenuePhoto
+                  alt="Photo of Swinton Estate"
+                  path={swintonPath}
+                ></VenuePhoto>
+              </div>
+              <div className="col-md p-3">
                 <p>
                   {
                     "The reception takes place at Swinton Park, just outside the market town of Masham."
@@ -62,15 +80,15 @@ const Venue = () => {
                 </p>
                 <p>{reception.address}</p>
               </div>
-              <div className="col">
-                <VenuePhoto
-                  alt="Photo of Swinton Estate"
-                  path={swintonPath}
-                ></VenuePhoto>
-              </div>
+            </div>
+          </div>
+        </div>
+        <div className="row">
+          <div className="col">
+            <div className="row p-3">
+              <h2>{"Tap a pin for directions"}</h2>
             </div>
             <div className="row">
-              <h2>{"Tap a pin for direction"}s</h2>
               <Map pins={[ceremony, reception]} />
             </div>
           </div>

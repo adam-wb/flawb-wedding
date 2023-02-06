@@ -8,20 +8,28 @@ import { faHeart } from "@fortawesome/free-solid-svg-icons";
 const Home = () => (
   <div id="Home">
     <div className="container py-3">
-      <div className="row">
+      <div className="row px-3">
         <div className="col">
           <h1>{"Join us in the countdown until we say 'I do!'"}</h1>
+        </div>
+      </div>
+      <div className="row px-3">
+        <div className="col">
           <Countdown date={CEREMONY} />
         </div>
       </div>
     </div>
     <BannerPhoto />
     <div className="container py-3">
-      <div className="row">
+      <div className="row p-3">
         <div className="col">
           <h2>
             {"Welcome to our wedding website! We're so glad you're here."}
           </h2>
+        </div>
+      </div>
+      <div className="row p-3">
+        <div className="col">
           <p>
             {
               "We've created this website as a helpful resource for all of the need-to-know details in the lead up to our big day."
